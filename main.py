@@ -48,7 +48,7 @@ query = input("What can I help you to research today? ")
 raw_response = agent_executor.invoke({"query": query})
 
 try:
-    structured_response = parser.parse(raw_response.get("output")[0]["text"])
+    structured_response = parser.parse(raw_response["output"])
     print(structured_response)
 except Exception as e:
     print(f"Error parsing response: {e}")
